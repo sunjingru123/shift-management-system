@@ -1,0 +1,22 @@
+{
+  "name": "shift-management-system",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "build": "pnpm --filter @shift-management/shared build && pnpm --filter @shift-management/api build && pnpm --filter @shift-management/web build",
+    "dev:api": "pnpm --filter @shift-management/api start:dev",
+    "dev:web": "pnpm --filter @shift-management/web dev",
+    "test": "pnpm -r --if-present test",
+    "test:api": "pnpm --filter @shift-management/api test",
+    "test:web": "pnpm --filter @shift-management/web test",
+    "test:e2e": "playwright test --list",
+    "lint": "pnpm -r --if-present lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "prettier": "^3.8.3"
+  }
+}
